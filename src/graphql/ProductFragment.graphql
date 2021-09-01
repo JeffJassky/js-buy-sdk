@@ -8,6 +8,7 @@ fragment ProductFragment on Product {
   handle
   productType
   title
+  tags
   vendor
   publishedAt
   onlineStoreUrl
@@ -26,6 +27,20 @@ fragment ProductFragment on Product {
         id
         src
         altText
+      }
+    }
+  }
+  metafields(first: 10) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+    edges {
+      cursor
+      node {
+        namespace
+        key
+        value
       }
     }
   }

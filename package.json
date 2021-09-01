@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prepublish": "yarn run build",
-    "build": "yarn run build:optimized && yarn run build:unoptimized",
+    "build": "yarn run build:optimized",
     "build:optimized": "rollup -c && yarn run minify-umd:optimized",
     "build:unoptimized": "rollup -c rollup-unoptimized.config.js && yarn run minify-umd:unoptimized",
     "start": "yarn run clean && yarn run setup-paths && concurrently --names DEPS,LIVERELOAD,ROLLUP,HTTP,NOTIFIER 'yarn run test:web-deps' 'yarn run test:livereload-server' 'yarn run test:watch' 'http-server -p 4200 .tmp/test' 'yarn run print-start-message'",
